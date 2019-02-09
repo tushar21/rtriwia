@@ -1,0 +1,16 @@
+<mat-card>
+  <button md-fab class="page-action" [routerLink]="['add']">
+    <mat-icon class="md-24">add</mat-icon>
+  </button>
+
+  <mat-card-title>Questions</mat-card-title>
+  <mat-card-content>    
+    <question-list [questions]="questionsObs | async" 
+                  [categoryDictionary]="categoryDictObs | async"
+                  class="flex-container" 
+                  fxLayoutWrap="wrap"
+                  fxLayout="row"
+                  fxLayoutAlign="center" fxLayoutAlign.xs="start">
+    </question-list>
+  </mat-card-content>    
+</mat-card>

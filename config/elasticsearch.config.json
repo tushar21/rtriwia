@@ -1,0 +1,13 @@
+{
+  "hosts": [
+    "http://35.184.239.159:9200",
+    "http://35.193.180.236:9200",
+    "http://35.192.226.133:9200"
+    
+  ],
+  "log": "trace",
+  "httpAuth": "elastic:jdBHQD8b",
+  "ssl": {
+    "rejectUnauthorized": false
+  }
+}

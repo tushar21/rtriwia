@@ -1,0 +1,52 @@
+<mat-card class="flex-container" 
+          fxLayoutWrap="wrap"
+          fxLayout="row"
+          fxLayoutAlign="center" fxLayoutAlign.xs="start">
+  <mat-card class="dash-card">
+    <mat-card-title>
+      <a [routerLink]="['/game-play']">
+        <button md-button color="primary">START NEW GAME</button>
+      </a>
+    </mat-card-title>
+    <mat-card-content>
+      Active Games:
+      <mat-list>
+        <mat-list-item *ngFor="let game of activeGamesObs | async">
+          <a [routerLink]="['/game', game]">
+            <button md-button color="primary">GAME: {{game}}</button>
+          </a>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dash-card">
+    <mat-card-title>rwa Stats</mat-card-title>
+    <mat-list>
+      <mat-list-item>
+        <span>Categories Count: <span id="category-count">{{(categoriesObs | async).length}}</span></span>
+      </mat-list-item>
+      <mat-list-item>
+        <span>Tag Count: <span id="tag-count">{{(tagsObs | async).length}}</span></span>
+      </mat-list-item>
+      <mat-list-item>
+        <span>Question Count: <span id="question-count">{{(questionsObs | async).length}}</span></span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Sample Questions</mat-card-title>
+  <mat-card-content>    
+
+    <question-list [questions]="sampleQuestionsObs | async" 
+                  [categoryDictionary]="categoryDictObs | async"
+                  class="flex-container" 
+                  fxLayoutWrap="wrap"
+                  fxLayout="row"
+                  fxLayoutAlign="center" fxLayoutAlign.xs="start">
+    </question-list>
+
+  </mat-card-content>    
+</mat-card>

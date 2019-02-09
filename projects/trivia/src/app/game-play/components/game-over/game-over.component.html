@@ -1,0 +1,21 @@
+<mat-card class="flex-item">
+  <mat-card-title fxLayout="row">
+    <div >GAME OVER</div>
+    <div fxFlex></div>
+    <div></div>
+  </mat-card-title>
+  <mat-card-header>
+    <mat-card-subtitle>
+      Score: {{correctCount}}/{{noOfQuestions}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content fxLayoutAlign="center center">
+    <button md-button (click)="continueButtonClicked($event)">CONTINUE</button>
+  </mat-card-content>
+
+  <mat-card-footer fxLayout="row" fxLayoutAlign="space-between center">
+    <button md-button (click)="viewQuestionClicked.emit($event)">VIEW QUESTION</button>
+    <div fxFlexAlign="center"></div>
+    <button md-button>REPORT ISSUE</button>
+  </mat-card-footer>
+</mat-card>
